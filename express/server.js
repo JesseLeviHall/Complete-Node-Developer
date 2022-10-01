@@ -14,6 +14,13 @@ app.get("/friends", (req, res) => {
   res.json(friends);
 });
 
+app.use((req, res, next) => {
+  const start = Date.now();
+  next();
+  console.log(`Response time: ${Date.now() - start} ms`);
+  console.log(`Request IP: ${req.url} Method: ${req.method}`);
+});
+
 app.get("/friends/:friendId", (req, res) => {
   const friendId = Number(req.params.friendId);
   const friend = friends[friendId];
