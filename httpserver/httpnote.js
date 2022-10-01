@@ -18,3 +18,5 @@
 //access control allow origin is a header that is sent with a response to a request. it tells the browser that the response is allowed to be accessed by the requesting domain.
 
 //side note, learn to test routes with vscode rest client extension.
+
+//a web server is a program that uses http to serve resources to a client. it is a program that listens for requests from a client and sends back a response.
