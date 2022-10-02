@@ -15,3 +15,9 @@
 //app.use(myMiddleware);
 
 //the following code loads a middleware function into a chain of middleware functions at a path for GET requests to the root of the app: app.get('/', myMiddleware);
+
+//REST API is an architectural style for building distributed systems based on hypermedia. REST is independent of any underlying protocol and is not necessarily tied to HTTP. For this reason, when people refer to REST APIs, they are usually referring to REST APIs that use HTTP.
+
+//REST stands for Representational State Transfer. To be a RESTful API, an application must: Use HTTP response codes to indicate API status and errors. Use HTTP verbs (GET, POST, PUT, DELETE) to operate on the collections and elements. Use standard HTTP authentication and authorization. Return JSON-encoded responses. Use HATEOAS (Hypermedia as the Engine of Application State).
+
+//really only makes sense when you have a client and server.
