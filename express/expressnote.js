@@ -21,3 +21,5 @@
 //REST stands for Representational State Transfer. To be a RESTful API, an application must: Use HTTP response codes to indicate API status and errors. Use HTTP verbs (GET, POST, PUT, DELETE) to operate on the collections and elements. Use standard HTTP authentication and authorization. Return JSON-encoded responses. Use HATEOAS (Hypermedia as the Engine of Application State).
 
 //really only makes sense when you have a client and server.
+
+//CRUD stands for Create, Read, Update, and Delete. These are the four basic functions of persistent storage. Any information that is “storable” can be managed using CRUD. In a RESTful API, CRUD corresponds to the HTTP methods POST, GET, PUT, and DELETE, respectively.
