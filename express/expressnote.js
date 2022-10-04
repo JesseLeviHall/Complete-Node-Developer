@@ -23,3 +23,7 @@
 //really only makes sense when you have a client and server.
 
 //CRUD stands for Create, Read, Update, and Delete. These are the four basic functions of persistent storage. Any information that is “storable” can be managed using CRUD. In a RESTful API, CRUD corresponds to the HTTP methods POST, GET, PUT, and DELETE, respectively.
+
+//mvc architecture is different than mvp and mvvm. mvc is a software design pattern that separates an application into three main logical components: the model, the view, and the controller. Each of these components are built to handle specific development aspects of an application.
+
+//the model is the data, the view is the user interface, and the controller is the application logic. the model and view never communicate with each other directly. the controller mediates the interaction between the model and the view. the controller receives user input and converts it to commands for the model or view.
