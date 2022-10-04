@@ -27,3 +27,5 @@
 //mvc architecture is different than mvp and mvvm. mvc is a software design pattern that separates an application into three main logical components: the model, the view, and the controller. Each of these components are built to handle specific development aspects of an application.
 
 //the model is the data, the view is the user interface, and the controller is the application logic. the model and view never communicate with each other directly. the controller mediates the interaction between the model and the view. the controller receives user input and converts it to commands for the model or view.
+
+//microservices are a software development technique—a variant of the service-oriented architecture (SOA) architectural style that structures an application as a collection of loosely coupled services. In a microservices architecture, services are fine-grained and the protocols are lightweight.
