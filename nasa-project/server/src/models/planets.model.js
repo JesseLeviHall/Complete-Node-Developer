@@ -1,7 +1,7 @@
-const { parse } = require("csv-parse");
 //node fs module lets us read and write files and interact with the file system or stream data.
-const { createReadStream } = require("fs");
-const { resolve } = require("path");
+const fs = require("fs");
+const path = require("path");
+const { parse } = require("csv-parse");
 
 const habitablePlanets = [];
 
@@ -18,7 +18,9 @@ function isHabitablePlanet(planet) {
 function loadPlanetsData() {
   //create a emitter and read stream from the csv file
   return new Promise((resolve, reject) => {
-    fs.createReadStream("kepler_data.csv")
+    fs.createReadStream(
+      path.join(__dirname, "..", "..", "data", "kepler_data.csv")
+    )
       //pipe the stream (readable file) to the parser to create an array of objects.
       .pipe(
         parse({
