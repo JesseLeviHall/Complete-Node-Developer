@@ -15,6 +15,10 @@ const launch = {
 //the set method allows you to add a new key value pair to the map:
 launches.set(launch.flightNumber, launch);
 
+function getAllLaunches() {
+  return Array.from(launches.values());
+}
+
 module.exports = {
-  launches,
+  getAllLaunches,
 };
