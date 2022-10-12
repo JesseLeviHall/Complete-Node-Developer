@@ -66,3 +66,6 @@ myEmitter.emit('event'); */
 //const { spawn } = require('child_process');
 //spawn('get', ['https://www.google.com'], { stdio: 'inherit' });
 //spawn is a function that takes two arguments, the first is the path to the file we want to run, the second is an array of arguments we want to pass to the file we want to run.
+
+//layered Architecture organizes apps into three parts typically. The presentation layer, the business logic layer, and the data access layer. In MVC the presentation layer is the view, the business logic layer is the controller, and the data access layer is the model.
+//this is the design principle of separation of concerns
