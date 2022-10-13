@@ -4,6 +4,7 @@
 /nasa-project/server/data
 /nasa-project/client/node_modules
 /nasa-project/server/node_modules
+/nasa-project/client/package-lock.json
 # dependencies
 /node_modules
 /.pnp
