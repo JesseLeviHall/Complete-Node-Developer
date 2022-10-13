@@ -11,7 +11,7 @@ function httpAddNewLaunch(req, res) {
     !launch.mission ||
     !launch.rocket ||
     !launch.launchDate ||
-    !launch.destination
+    !launch.target
   ) {
     // if any of these are missing, return a 400 error
     return res.status(400).json({
