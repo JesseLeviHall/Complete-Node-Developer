@@ -66,4 +66,12 @@ if (cluster.isMaster) {
 
 //the cluster module is used to create a master process and worker processes. The master process is responsible for creating worker processes and distributing incoming requests across the worker processes. The worker processes are responsible for handling the requests.
 
-//the rounde robin algorithm is used to distribute incoming requests across the worker processes. The master process keeps track of the number of requests each worker process has handled and distributes the next request to the worker process with the least number of requests.
+//node clustering uses the rounde robin algorithm. it is used to distribute incoming requests across the worker processes. The master process keeps track of the number of requests each worker process has handled and distributes the next request to the worker process with the least number of requests.
+
+//the cluster module is not a load balancer. It is a tool for creating worker processes. It is up to you to create a load balancer using the cluster module.
+
+//horizontal scaling is the process of adding more servers to a system to increase performance. This is called scaling out.
+
+//vertical scaling is the process of adding more resources to a single server to increase performance. This is called scaling up.
+
+//the PM2 module is a process manager built on the node cluster. It is used to manage node processes. It is used to start, stop, restart, and monitor node processes. It is also used to automatically restart node processes when they crash.
