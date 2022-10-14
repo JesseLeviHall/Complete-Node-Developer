@@ -1,4 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+/improve_node_performance/node_modules
+
 /nasa-project/node_modules
 /nasa-project/server/public
 /nasa-project/server/data
