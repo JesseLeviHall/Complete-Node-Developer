@@ -16,4 +16,13 @@ the five main data base models are:
   a database is a system of hardware and software that allows a user to organize, store, and use data. 
 
   SQL is a language for interacting with relational databases.
+  a query is a structured request for data from a database. like a question you ask a database.
+
+  SQL is declarative.  you tell the database what you want, not how to get it. declarative languages are easier to read and write. limited to what the language allows you to do.
+  sql means structured enlish query language. 
+
+  imperative languages are procedural.  you tell the database how to get the data.  imperative languages are harder to read and write. You have to tell the database how to get the data. way more options for creating custom queries.
+
+
+  
 */
