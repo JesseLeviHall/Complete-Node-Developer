@@ -23,6 +23,11 @@ the five main data base models are:
 
   imperative languages are procedural.  you tell the database how to get the data.  imperative languages are harder to read and write. You have to tell the database how to get the data. way more options for creating custom queries.
 
+  A table has a name, and represents an object. The table has columns and rows.  The columns are the properties of the object. like the key.  The rows are the instances of the object, one single peice of data. 
 
-  
+  The column names are the called the degree of the table or the domain or constraint.   The rows are called the cardinality of the table or the attribute or the field.
+
+  the column defines the type of the data that can be stored in that column.  the type of data that can be stored in a column is called the domain.  the domain is the set of all possible values for that column.
+
+  rows are called tuples.  a tuple is a set of values that are related to each other.  a tuple is a single row of data.  a tuple is a single record.  a tuple is a single instance of a table.  a tuple is a single instance of an object.
 */
