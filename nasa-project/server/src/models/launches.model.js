@@ -1,3 +1,5 @@
+//const launches = require("./launches.mongo");
+
 //maps are a data structure that allows you to store key value pairs in a specific order.
 const launches = new Map();
 

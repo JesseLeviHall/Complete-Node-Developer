@@ -29,5 +29,9 @@ the five main data base models are:
 
   the column defines the type of the data that can be stored in that column.  the type of data that can be stored in a column is called the domain.  the domain is the set of all possible values for that column.
 
-  rows are called tuples.  a tuple is a set of values that are related to each other.  a tuple is a single row of data.  a tuple is a single record.  a tuple is a single instance of a table.  a tuple is a single instance of an object.
+  rows are called tuples.  a tuple is a set of values that are related to each other.  a tuple is a single row of data.  a tuple is a single record.  a tuple is a single instance of a table.  a tuple is a single instance of an object. multiple rows are called the cardinality of the table.  the cardinality is the number of rows in a table.
+
+  the primary key usually is the id column. the foreign key references the primary key of a different table that will allow a relationship to be created between the two tables.
+
+  
 */

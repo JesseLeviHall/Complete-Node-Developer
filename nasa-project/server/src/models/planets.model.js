@@ -3,6 +3,8 @@ const fs = require("fs");
 const path = require("path");
 const { parse } = require("csv-parse");
 
+const planets = require("./planets.mongo");
+
 const habitablePlanets = [];
 
 //function to filter habitable planets
@@ -28,9 +30,13 @@ function loadPlanetsData() {
           columns: true,
         })
       )
-      .on("data", (data) => {
+      .on("data", async (data) => {
         if (isHabitablePlanet(data)) {
-          habitablePlanets.push(data);
+          //upsert is a mongoose method that allows you to insert a new document if it doesn't exist or update it if it does.
+          /*  TODO: replace create with upsert
+         await planets.create({
+            keplerName: data.kepler_name,
+          }); */
         }
       })
       .on("error", (err) => {
