@@ -5,8 +5,6 @@ const { parse } = require("csv-parse");
 
 const planets = require("./planets.mongo");
 
-const habitablePlanets = [];
-
 //function to filter habitable planets
 function isHabitablePlanet(planet) {
   return (
@@ -32,26 +30,40 @@ function loadPlanetsData() {
       )
       .on("data", async (data) => {
         if (isHabitablePlanet(data)) {
-          //upsert is a mongoose method that allows you to insert a new document if it doesn't exist or update it if it does.
-          /*  TODO: replace create with upsert
-         await planets.create({
-            keplerName: data.kepler_name,
-          }); */
+          savePlanet(data);
         }
       })
       .on("error", (err) => {
         console.log(err);
         reject(err);
       })
-      .on("end", () => {
-        console.log(`${habitablePlanets.length} habitable planets found!`);
+      .on("end", async () => {
+        const countPlanetsFound = (await getAllPlanets()).length;
+        console.log(`${countPlanetsFound} habitable planets found!`);
         resolve();
       });
   });
 }
 
-function getAllPlanets() {
-  return habitablePlanets;
+async function getAllPlanets() {
+  return await planets.find({});
+}
+
+async function savePlanet(planet) {
+  //upsert is a mongoose method that allows you to insert a new document if it doesn't exist or update it if it does.
+  try {
+    await planets.updateOne(
+      {
+        keplerName: planet.keplerName,
+      },
+      planet,
+      {
+        upsert: true,
+      }
+    );
+  } catch (err) {
+    console.log(`Could not save planet ${err}`);
+  }
 }
 
 module.exports = {
