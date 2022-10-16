@@ -13,5 +13,7 @@ the five main data base models are:
   amazon apache is an example of a wide-column database.  good for data that has a lot of columns, like sensor data. 
 
 
-  
+  a database is a system of hardware and software that allows a user to organize, store, and use data. 
+
+  SQL is a language for interacting with relational databases.
 */
