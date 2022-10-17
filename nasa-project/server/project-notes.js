@@ -21,5 +21,5 @@ unlike clusters worker threads are not for horizontal scaling.  They are for ver
 
 clusters run multiple instances of node on seperate processes on the same machine. workers run multiple threads on the same process. *** This means worker threads share memory clusters do not. ***
 
-
+Mongoose creates a version id for each document.  This is a unique identifier that is used to track changes to the document.  It is used to implement optimistic concurrency control. Allows for schema version control 
 */

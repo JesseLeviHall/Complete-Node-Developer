@@ -46,7 +46,7 @@ function loadPlanetsData() {
 }
 
 async function getAllPlanets() {
-  return await planets.find({});
+  return await planets.find({}, "-_id -__v");
 }
 
 async function savePlanet(planet) {
@@ -54,15 +54,17 @@ async function savePlanet(planet) {
   try {
     await planets.updateOne(
       {
-        keplerName: planet.keplerName,
+        keplerName: planet.kepler_name,
       },
-      planet,
+      {
+        keplerName: planet.kepler_name,
+      },
       {
         upsert: true,
       }
     );
   } catch (err) {
-    console.log(`Could not save planet ${err}`);
+    console.error(`Could not save planet ${err}`);
   }
 }
 

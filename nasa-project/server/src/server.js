@@ -20,7 +20,7 @@ mongoose.connection.on("error", (err) => {
 
 async function startServer() {
   try {
-    await mongoose.connect(process.env.MONGO_URL);
+    await mongoose.connect("");
     await loadPlanetsData();
   } catch (error) {
     console.log(error);
