@@ -34,4 +34,6 @@ the five main data base models are:
   the primary key usually is the id column. the foreign key references the primary key of a different table that will allow a relationship to be created between the two tables.
 
   One benefit of relational db is the referential integrity. referential integrity is checked automatically by sql, it wont let you update or delete a row that references another table that doesnt exist or the link is broken.  for referential integrity to hold, any foreign key must be valid. 
+
+  auto increment is built into mySQL and not mongodb. 
 */

@@ -1,10 +1,12 @@
 const launchesDatabase = require("./launches.mongo");
 const planets = require("./planets.mongo");
 
-//maps are a data structure that allows you to store key value pairs in a specific order.
-const launches = new Map();
+const DEFUALT_FLIGHT_NUMBER = 100;
 
-let latestFlightNumber = 100;
+//maps are a data structure that allows you to store key value pairs in a specific order.
+//const launches = new Map();
+
+//let latestFlightNumber = 100;
 
 const launch = {
   flightNumber: 100,
@@ -24,6 +26,14 @@ saveLaunch(launch);
 
 //this is a data layer function that returns all the launches in the map: it allows us to keep the data layer separate from the business logic layer.
 
+async function getLatestFlightNumber() {
+  const latestLaunch = await launchesDatabase.findOne().sort("-flightNumber");
+  if (!latestLaunch) {
+    return DEFUALT_FLIGHT_NUMBER;
+  }
+  return latestLaunch.flightNumber;
+}
+
 async function getAllLaunches() {
   return await launchesDatabase.find({}, { _id: 0, __v: 0 });
 }
@@ -35,7 +45,7 @@ async function saveLaunch(launch) {
   if (!planet) {
     throw new Error("No matching planet was found.");
   }
-  await launchesDatabase.upDateOne(
+  await launchesDatabase.findOneAndUpdate(
     {
       flightNumber: launch.flightNumber,
     },
@@ -46,7 +56,18 @@ async function saveLaunch(launch) {
   );
 }
 
-function addNewLaunch(launch) {
+async function scheduleNewLaunch(launch) {
+  const newFlightNumber = (await getLatestFlightNumber()) + 1;
+  const newLaunch = Object.assign(launch, {
+    upcoming: true,
+    customers: ["Zero to Mastery", "NASA"],
+    success: true,
+    flightNumber: newFlightNumber,
+  });
+  await saveLaunch(newLaunch);
+}
+
+/* function addNewLaunch(launch) {
   latestFlightNumber++;
   launches.set(
     launch.flightNumber,
@@ -57,22 +78,35 @@ function addNewLaunch(launch) {
       flightNumber: latestFlightNumber,
     })
   );
+} */
+
+async function existsLaunchWithId(launchId) {
+  return await launchesDatabase.findOne({
+    flightNumber: launchId,
+  });
 }
 
-function existsLaunchWithId(launchId) {
-  return launches.has(launchId);
-}
+async function abortLaunchById(launchId) {
+  const aborted = await launchesDatabase.updateOne(
+    {
+      flightNumber: launchId,
+    },
+    {
+      upcoming: false,
+      success: false,
+    }
+  );
+  return aborted.modifiedCount === 1;
 
-function abortLaunchById(launchId) {
-  const aborted = launches.get(launchId);
+  /* const aborted = launches.get(launchId);
   aborted.upcoming = false;
   aborted.success = false;
-  return aborted;
+  return aborted; */
 }
 
 module.exports = {
   getAllLaunches,
-  addNewLaunch,
   abortLaunchById,
   existsLaunchWithId,
+  scheduleNewLaunch,
 };
