@@ -1,4 +1,4 @@
-//const launches = require("./launches.mongo");
+const launchesDatabase = require("./launches.mongo");
 
 //maps are a data structure that allows you to store key value pairs in a specific order.
 const launches = new Map();
@@ -16,12 +16,27 @@ const launch = {
   success: true,
 };
 
+saveLaunch(launch);
+
 //the set method allows you to add a new key value pair to the map:
-launches.set(launch.flightNumber, launch);
+//launches.set(launch.flightNumber, launch);
 
 //this is a data layer function that returns all the launches in the map: it allows us to keep the data layer separate from the business logic layer.
-function getAllLaunches() {
-  return Array.from(launches.values());
+
+async function getAllLaunches() {
+  return await launchesDatabase.find({}, { _id: 0, __v: 0 });
+}
+
+async function saveLaunch(launch) {
+  await launchesDatabase.upDateOne(
+    {
+      flightNumber: launch.flightNumber,
+    },
+    launch,
+    {
+      upsert: true,
+    }
+  );
 }
 
 function addNewLaunch(launch) {
