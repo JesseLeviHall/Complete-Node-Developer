@@ -1,8 +1,7 @@
 const http = require("http");
-const mongoose = require("mongoose");
 const process = require("process");
-
 const app = require("./app");
+const { mongoConnect } = require("./services/mongo");
 
 const { loadPlanetsData } = require("./models/planets.model");
 
@@ -10,17 +9,9 @@ const PORT = process.env.PORT || 8000;
 
 const server = http.createServer(app);
 
-mongoose.connection.once("open", () => {
-  console.log("MongoDB connection ready");
-});
-
-mongoose.connection.on("error", (err) => {
-  console.log("MongoDB connection error", err);
-});
-
 async function startServer() {
   try {
-    await mongoose.connect("");
+    await mongoConnect();
     await loadPlanetsData();
   } catch (error) {
     console.log(error);

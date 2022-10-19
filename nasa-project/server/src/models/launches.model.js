@@ -79,9 +79,12 @@ async function scheduleNewLaunch(launch) {
     })
   );
 } */
+async function findLaunch(filter) {
+  return await launchesDatabase.findOne(filter);
+}
 
 async function existsLaunchWithId(launchId) {
-  return await launchesDatabase.findOne({
+  return await findLaunch({
     flightNumber: launchId,
   });
 }
@@ -96,12 +99,8 @@ async function abortLaunchById(launchId) {
       success: false,
     }
   );
-  return aborted.modifiedCount === 1;
 
-  /* const aborted = launches.get(launchId);
-  aborted.upcoming = false;
-  aborted.success = false;
-  return aborted; */
+  return aborted.modifiedCount === 1;
 }
 
 module.exports = {
