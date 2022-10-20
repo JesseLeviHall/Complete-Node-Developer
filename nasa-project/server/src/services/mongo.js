@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
 
-async function mongoDisconnect() {
-  await mongoose.disconnect();
-}
+const MONGO_URL =
+  "mongodb+srv://nasa-api:3EZYIJZUxkbZE2fe@nasacluster.5cg5ecw.mongodb.net/?retryWrites=true&w=majority";
 
 module.exports = {
   mongoConnect,
