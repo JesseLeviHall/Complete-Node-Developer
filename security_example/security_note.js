@@ -12,5 +12,8 @@ HTTPS is a standard for encrypting network traffic over HTTP.  the data is encry
 
 Digital Certificates are used to verify the identity of a server. these are used by HTTPS to verify the identity of the server. these are free from Let's Encrypt, but it requires a domain name. Self-signed certificates are also possible, but they are not trusted by browsers. CA-signed certificates are also possible, but they are expensive.
 
+generate a self-signed certificate with openssl (https://www.openssl.org/) command: openssl req -x509 -newkey rsa:4096 -nodes -keyout key.pem -out cert.pem -days 365
 
+
+helmet is a middleware for express that adds security headers to the response. 
 */
