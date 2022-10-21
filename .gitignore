@@ -8,6 +8,8 @@
 /nasa-project/client/node_modules
 /nasa-project/server/node_modules
 /nasa-project/client/package-lock.json
+
+/security_example/node_modules
 # dependencies
 /node_modules
 /.pnp
