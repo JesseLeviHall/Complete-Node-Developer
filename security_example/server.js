@@ -2,12 +2,31 @@ const fs = require("fs");
 const https = require("https");
 const path = require("path");
 const express = require("express");
+const helmet = require("helmet");
 
 const PORT = 3000;
 
 const app = express();
 
-app.get("/secret", (req, res) => {
+app.use(helmet());
+
+function checkLoggedIn(req, res, next) {
+  const isLoggedIn = true; // this would be a database lookup in the real world
+  if (!isLoggedIn) {
+    return res.status(401).json({ error: "Not logged in" });
+  }
+  next();
+}
+
+app.get("/auth", (req, res) => {
+  res.json({ message: "You are logged in" });
+});
+
+app.get("/auth/logout", (req, res) => {
+  res.json({ message: "You are logged out" });
+});
+
+app.get("/secret", checkLoggedIn, (req, res) => {
   return res.send("This is a secret");
 });
 
