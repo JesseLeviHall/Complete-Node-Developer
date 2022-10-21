@@ -10,19 +10,6 @@ const DEFUALT_FLIGHT_NUMBER = 100;
 
 //let latestFlightNumber = 100;
 
-const launch = {
-  flightNumber: 100,
-  mission: "Kepler Exploration X",
-  rocket: "Explorer IS1",
-  launchDate: new Date("December 27, 2030"),
-  target: "Kepler-442 b",
-  customers: ["NASA", "ZTM"],
-  upcoming: true,
-  success: true,
-};
-
-saveLaunch(launch);
-
 const SPACE_X_API_URL = "https://api.spacexdata.com/v4/launches/query";
 
 async function populateLaunches() {
@@ -103,8 +90,12 @@ async function getLatestFlightNumber() {
   return latestLaunch.flightNumber;
 }
 
-async function getAllLaunches() {
-  return await launchesDatabase.find({}, { _id: 0, __v: 0 });
+async function getAllLaunches(skip, limit) {
+  return await launchesDatabase
+    .find({}, { _id: 0, __v: 0 })
+    .sort({ flightNumber: -1 })
+    .skip(skip)
+    .limit(limit);
 }
 
 async function saveLaunch(launch) {
