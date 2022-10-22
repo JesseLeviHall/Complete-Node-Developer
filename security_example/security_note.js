@@ -38,4 +38,5 @@ store sessions is servier side sessions, or client side sessions.  but client si
 
 we can lower the amount of data needed to be sent to the server by using a cookie but they are limited to 4kb. 
 
+using express the cookie-session package is used to set up client side cookie sessions. express-session is used to set up server side sessions.
 */
