@@ -30,6 +30,12 @@ an opace token is a token that is not readable by the client.
 the oauth 2.0 authorization code flow is a high standard. 
 
 passport.js is a middleware for express that implements authentication. there are a lot of strategies for passport.js.
+you need to set the strategy and configure it.
 
+sessions are a way of storing data on the server about the user. Short lived, the session data is only relevant while the user is using the site. Typically tied to a temporary state of a site like a shopping cart.
+
+store sessions is servier side sessions, or client side sessions.  but client side sessions are more performant. When using cookies for authentication, you should use the httpOnly flag to prevent XSS attacks. and these are stateful cookies. stateless cookies are not tied to a session.
+
+we can lower the amount of data needed to be sent to the server by using a cookie but they are limited to 4kb. 
 
 */
