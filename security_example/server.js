@@ -23,7 +23,8 @@ app.get("/auth", (req, res) => {
 });
 
 app.get("/auth/logout", (req, res) => {
-  res.json({ message: "You are logged out" });
+  req.logout(); //removes req.user and clears sessions
+  return res.redirect("/");
 });
 
 app.get("/secret", checkLoggedIn, (req, res) => {

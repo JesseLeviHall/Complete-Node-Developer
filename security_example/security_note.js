@@ -1,5 +1,5 @@
 /* 
-In the real world you would not usually implement your own authenticatoin security. 
+In the real world you would not usually implement your own authentication security. 
 
 Oauth is a standard for authentication and authorization.
 
@@ -39,4 +39,9 @@ store sessions is servier side sessions, or client side sessions.  but client si
 we can lower the amount of data needed to be sent to the server by using a cookie but they are limited to 4kb. 
 
 using express the cookie-session package is used to set up client side cookie sessions. express-session is used to set up server side sessions.
+
+express sesion uses server memory that will be gone each time the server restarts. For this reason by default it is not intended to be used in a production environment. In production you need to set up your own scalable session store.
+
+cookie-session is simpler because we dont need to set up a session store database to look up everytime the user makes a request. this helps keep our node process small and fast and stateless so we can load-balance and cluster easily, but it is not as secure as server side sessions.
+
 */
