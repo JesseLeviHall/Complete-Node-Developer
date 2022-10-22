@@ -44,4 +44,6 @@ express sesion uses server memory that will be gone each time the server restart
 
 cookie-session is simpler because we dont need to set up a session store database to look up everytime the user makes a request. this helps keep our node process small and fast and stateless so we can load-balance and cluster easily, but it is not as secure as server side sessions.
 
+refresh tokens are used to get a new access token when the access token expires. Okta is a service that provides these and role-based access control. Okta is an authorization server. 
+
 */
