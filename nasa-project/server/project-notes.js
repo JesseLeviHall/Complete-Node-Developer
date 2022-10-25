@@ -23,5 +23,10 @@ clusters run multiple instances of node on seperate processes on the same machin
 
 Mongoose creates a version id for each document.  This is a unique identifier that is used to track changes to the document.  It is used to implement optimistic concurrency control. Allows for schema version control 
 
+Amazons ec2 is a virtual machine system. 
+
+docker containers contain all the project app files that your app needs. 
+docker images are the files that are used to create the containers. 
+amazons elastic container registry is like a docker registry.  It is a place to store docker images.
 
 */
