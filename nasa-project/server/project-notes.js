@@ -29,4 +29,7 @@ docker containers contain all the project app files that your app needs.
 docker images are the files that are used to create the containers. 
 amazons elastic container registry is like a docker registry.  It is a place to store docker images.
 
+docker compose is a tool for defining and running multi-container docker applications.
+
+docker run -it -p 8000:8000 jhall505/nasa-project 
 */
