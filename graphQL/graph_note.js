@@ -22,4 +22,10 @@ GraphQL has one endpoint, and that endpoint is the entry point to your entire AP
 A query usually has a name, and a set of parameters. The name is used to identify which part of the schema you want to access. The parameters are the arguments that are passed to that part of the schema.
 
 you dont need to use the word query in the query. you can use mutation, or subscription.
+
+a perfect use case is an e-commerce store. you can have a query that returns all the products, and a mutation that adds a product to the cart.
+
+graph ql provides a solution to underfetching and overfetching. underfetching is when you make a request for a resource, but you dont get all the data you need. overfetching is when you make a request for a resource, and you get more data than you need. No filtering needed. 
+
+graphql resolvers are functions that are responsible for populating the data for a single field in your schema. they can be used to fetch data from a database, or a REST API, or a microservice, or any other data source.
 */
