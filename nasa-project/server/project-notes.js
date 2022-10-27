@@ -41,7 +41,15 @@ SSH stands for secure shell protocol.  It is a network protocol that allows you 
 
 docker compose is a tool for defining and running multi-container docker applications.
 
+SSH login to the remote server:
+ssh -i "nasa-project.pem" ec2-user@...
+
+
 ainstall docker on ec2: sudo yum update -y && sudo yum install docker -y
 start docker: sudo service docker start
-add ec2-user to docker group: sudo usermod -a -G docker ec2-user
+add ec2-user to docker group: sudo usermod -a -G docker ec2-user 
+log out (exit) and log back in to apply changes.
+this will allow you to run docker commands without sudo and follows best practices for security(least privilege)
+
+docker login, docker run --restart=always -p 8000:8000 jhall505/nasa-project 
 */
