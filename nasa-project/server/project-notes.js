@@ -38,4 +38,6 @@ run the image:
 docker run -it -p 8000:8000 jhall505/nasa-project 
 
 SSH stands for secure shell protocol.  It is a network protocol that allows you to securely log into a remote computer.  It is used to access remote servers.  It is used to access remote docker containers.
+
+docker compose is a tool for defining and running multi-container docker applications.
 */
