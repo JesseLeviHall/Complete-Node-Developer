@@ -39,6 +39,6 @@ appolo is a graphql client that helps you manage data and state in your react ap
 
 the reference implementation of graphql is written in javascript. there are other implementations in other languages.
 
-
+graphql tools is a set of utilities for building graphql servers. it is a collection of packages that help you build a graphql server. executable schema for example is a package that helps you build a schema from type definitions and resolvers.
 
 */
