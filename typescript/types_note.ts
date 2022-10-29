@@ -7,5 +7,8 @@ angular is written in typescript by default. the largest benefit is large projec
 
 use tsc --init to set up a config file. 
 use tsc <file> --watch to watch for changes and recompile to js output. 
+
+
+
 */
 
