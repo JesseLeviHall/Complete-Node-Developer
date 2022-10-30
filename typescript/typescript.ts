@@ -1,4 +1,4 @@
-
+/* 
 //TYPES: 
 
 const sum = (a: number, b: number) => {
@@ -43,7 +43,7 @@ let sizeName2: number = Size.Small;//sizeName2 = 1
 //Any - !!!!!!! BE CAREFUL
 
 
-//******************************function stypes */
+
 //void
 let sing = (): void => {
     console.log('lalalala'); //function that returns nothing
@@ -66,3 +66,33 @@ let fightRobotArmy = (robots: RobotArmy) => { //this parameter needs  all three 
     console.log('FIGHT!');
 }
 
+//type assertion 
+interface CatArmy {
+    count: number,
+    type: string,
+    magic: string
+}
+
+let dog = {} as CatArmy; //this is a type assertion.
+dog.count; //this is dangerous but can be utilized carefully
+
+
+
+//function 
+let fightRobotArmy2 = (robots: RobotArmy): void => {
+    console.log('FIGHT!');
+}
+
+//class
+class Animal {
+    private sing: string = 'lalala';
+    constructor(sound: string) {
+        this.sing = sound;
+    }
+
+    greet() {
+        return `Hello ${this.sing}`;
+    }
+}
+
+ */

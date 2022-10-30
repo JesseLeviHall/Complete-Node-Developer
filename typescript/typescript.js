@@ -1,47 +1,98 @@
-//TYPES: 
-var sum = function (a, b) {
+/*
+//TYPES:
+
+const sum = (a: number, b: number) => {
     return a + b;
-};
-var answer = sum(4, 5);
-//boolean 
-var isCool = true;
+}
+
+const answer = sum(4, 5);
+
+//boolean
+let isCool: boolean = true;
+
 //number
-var age = 56;
+let age: number = 56;
+
 //string
-var eyeColor = 'brown';
-var favoriteQuote = "Im not old im only ".concat(age);
+let eyeColor: string = 'brown';
+let favoriteQuote: string = `Im not old im only ${age}`
+
 //array
-var pets = ['cat', 'dog', 'pig'];
-var pets2 = ['lion', 'dragon', 'lizard'];
+let pets: string[] = ['cat', 'dog', 'pig'];
+let pets2: Array<string> = ['lion', 'dragon', 'lizard'];
+
 //object
-var wizard = {
+let wizard: object = {
     a: 'Gandalf'
-};
+}
+
 //null and undefined
-var meh = undefined;
-var noo = null;
-//Tuple 
-var basket;
+let meh: undefined = undefined;
+let noo: null = null;
+
+
+//Tuple
+let basket: [string, number];
 basket = ['basketball', 5];
-//Enum stands for 
-var Size;
-(function (Size) {
-    Size[Size["Small"] = 1] = "Small";
-    Size[Size["Medium"] = 2] = "Medium";
-    Size[Size["Large"] = 3] = "Large";
-})(Size || (Size = {}));
-var sizeName = Size[2]; //sizeName = Medium
-var sizeName2 = Size.Small; //sizeName2 = 1
+
+//Enum stands for
+enum Size { Small = 1, Medium = 2, Large = 3}
+let sizeName: string = Size[2];//sizeName = Medium
+let sizeName2: number = Size.Small;//sizeName2 = 1
+
 //Any - !!!!!!! BE CAREFUL
-//******************************function stypes */
+
+
+
 //void
-var sing = function () {
+let sing = (): void => {
     console.log('lalalala'); //function that returns nothing
-};
+}
+
+
 //never = function never returns. a variable under typegaurd is never true
-var error = function () {
+let error = (): never => {
     throw Error('oops');
-};
-var fightRobotArmy = function (robots) {
+}
+
+//interface - make sure certain object have certain property types. used alot in react, and the type keyword also works.
+interface RobotArmy {
+    count: number,
+    type: string,
+    magic: string
+}
+
+let fightRobotArmy = (robots: RobotArmy) => { //this parameter needs  all three types.
     console.log('FIGHT!');
-};
+}
+
+//type assertion
+interface CatArmy {
+    count: number,
+    type: string,
+    magic: string
+}
+
+let dog = {} as CatArmy; //this is a type assertion.
+dog.count; //this is dangerous but can be utilized carefully
+
+
+
+//function
+let fightRobotArmy2 = (robots: RobotArmy): void => {
+    console.log('FIGHT!');
+}
+
+//class
+class Animal {
+    private sing: string = 'lalala';
+    constructor(sound: string) {
+        this.sing = sound;
+    }
+
+    greet() {
+        return `Hello ${this.sing}`;
+    }
+}
+
+ */ 
