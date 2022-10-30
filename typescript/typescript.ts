@@ -49,7 +49,6 @@ let sing = (): void => {
     console.log('lalalala'); //function that returns nothing
 }
 
-
 //never = function never returns. a variable under typegaurd is never true
 let error = (): never => {
     throw Error('oops');
