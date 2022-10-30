@@ -35,7 +35,34 @@ let noo: null = null;
 let basket: [string, number];
 basket = ['basketball', 5];
 
-//Enum
+//Enum stands for 
 enum Size { Small = 1, Medium = 2, Large = 3}
-let sizeName: string = Size[2];
-let sizeName2: number = Size.Small;
+let sizeName: string = Size[2];//sizeName = Medium
+let sizeName2: number = Size.Small;//sizeName2 = 1
+
+//Any - !!!!!!! BE CAREFUL
+
+
+//******************************function stypes */
+//void
+let sing = (): void => {
+    console.log('lalalala'); //function that returns nothing
+}
+
+
+//never = function never returns. a variable under typegaurd is never true
+let error = (): never => {
+    throw Error('oops');
+}
+
+//interface - make sure certain object have certain property types. used alot in react, and the type keyword also works. 
+interface RobotArmy {
+    count: number,
+    type: string,
+    magic: string
+}
+
+let fightRobotArmy = (robots: RobotArmy) => { //this parameter needs  all three types. 
+    console.log('FIGHT!');
+}
+
